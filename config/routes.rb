@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'quiz#welcome' # либо get 'quiz/welcome' (контроллер/действие)
+
+  get 'quiz/ask'
+
+  get 'quiz/result'
+
     resources :questions
     resources :answers
   # The priority is based upon order of creation: first created -> highest priority.

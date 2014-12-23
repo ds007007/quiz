@@ -1,0 +1,17 @@
+<h1>Здесь будет вопрос</h1>
+<% if @question.present? %>
+	<%= @question.content %>
+	<%= form_tag(quiz_result_path, method: :get) do %>
+		<ol>
+			<% @question.answers.each do |a| %>
+			<li>
+				<%= radio_button_tag "answer_id", a.id %><!--1 param - name, 2 param - value-->
+				<%=  a.content %>
+			</li>
+			<% end %>
+		</ol>
+		<%= submit_tag "Проверить" %>
+	<% end %>
+<% else %>
+	<%= "Вопросов нет" %>
+<% end %>

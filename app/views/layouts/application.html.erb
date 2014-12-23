@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<nav>
+	<%= link_to "Главная", root_path %>
+	<%= link_to "Викторина", quiz_ask_path %>
+	<%=  link_to "Настройки", questions_path %>
+</nav>
+
 <%= yield %>
 
 </body>
