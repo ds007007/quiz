@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @answer.content %>
+  <br>
+  <strong>Question:</strong>
+  <%= @answer.question.content %>
+  <br>
+  <strong>Is correct:</strong>
+  <%= @answer.is_correct %>
+  <br>
+</p>
+
+<%= link_to 'Edit', edit_answer_path(@answer) %> |
+<%= link_to 'Back', answers_path %>
