@@ -17,7 +17,21 @@ class QuizController < ApplicationController
   def signup
     @user = User.find_by(login: params["login"])
     if  @user == nil
-      User.create(login: params["login"], password: params["password"])
+      new_user = User.create(login: params["login"], password: params["password"])
+      session[:user_id] = new_user.id
     end
+  end
+
+  def signin
+    user = User.find_by(login: params["login"], password: params["password"])
+    if user != nil
+      session[:user_id] = user.id
+    else
+      session[:user_id] = nil
+    end
+  end
+
+  def signout
+    session[:user_id] = nil
   end
 end

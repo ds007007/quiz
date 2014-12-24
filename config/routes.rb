@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   get 'quiz/signup'
 
+  get 'quiz/signin_form'
+
   get 'quiz/signin'
+
+  get 'quiz/signout'
 
   root 'quiz#welcome' # либо get 'quiz/welcome' (контроллер/действие)
 

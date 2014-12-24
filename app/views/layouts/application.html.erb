@@ -11,7 +11,12 @@
 <nav>
 	<%= link_to "Главная", root_path %>
 	<%= link_to "Викторина", quiz_ask_path %>
-	<%=  link_to "Настройки", questions_path %>
+	<%= link_to "Настройки", questions_path %>
+
+	<% if session[:user_id] != nil %>	
+		<%= User.find(session[:user_id]).login %>
+		<%= link_to "Выход", quiz_signout_path %>
+	<% end %>
 </nav>
 
 <%= yield %>
