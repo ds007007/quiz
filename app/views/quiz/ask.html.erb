@@ -6,7 +6,7 @@
 			<% @question.answers.each do |a| %>
 			<li>
 				<%= radio_button_tag "answer_id", a.id %><!--1 param - name, 2 param - value-->
-				<%=  a.content %>
+				<%= a.content %>
 			</li>
 			<% end %>
 		</ol>
