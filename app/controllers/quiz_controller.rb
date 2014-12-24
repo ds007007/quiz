@@ -13,4 +13,11 @@ class QuizController < ApplicationController
   def result
   	@answer = Answer.find(params[:answer_id])
   end
+
+  def signup
+    @user = User.find_by(login: params["login"])
+    if  @user == nil
+      User.create(login: params["login"], password: params["password"])
+    end
+  end
 end

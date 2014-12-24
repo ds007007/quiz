@@ -1,0 +1,13 @@
+<h1>Регистрация</h1>
+<%= form_tag(quiz_signup_path, method: :get) do %>
+	<div>
+		<%= label_tag "Логин" %>
+		<%= text_field_tag "login" %>
+	</div>
+	<div>
+		<%= label_tag "Пароль" %>
+		<%= text_field_tag "password" %>
+	</div>
+
+	<%= submit_tag "Регистрировать" %>
+<% end %>
