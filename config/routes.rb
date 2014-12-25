@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'quiz/signup_form'
 
-  post 'quiz/signup'
+  get 'user/signuped'
 
   get 'quiz/signin_form'
 
@@ -15,8 +14,9 @@ Rails.application.routes.draw do
 
   get 'quiz/result'
 
-    resources :questions
-    resources :answers
+  resources :questions
+  resources :answers
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

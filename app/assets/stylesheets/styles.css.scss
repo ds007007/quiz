@@ -1,7 +1,16 @@
 nav{
-	background-color: #F66C20;
+	background-color: #dcdcdc;
 	height: 50px;
+	padding: 10px;
+
+	div{
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+	}
 }
+
+
 table, th, td{
 	border: 1px solid black;
 }
