@@ -2,3 +2,12 @@ nav{
 	background-color: #F66C20;
 	height: 50px;
 }
+table, th, td{
+	border: 1px solid black;
+}
+th{
+	background-color: #dcdcdc;
+}
+th, td{
+	padding: 5px;
+}
