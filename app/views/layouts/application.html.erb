@@ -10,12 +10,16 @@
 
 <nav>
 	<%= link_to "Главная", root_path %>
-	<%= link_to "Викторина", quiz_ask_path %>
-	<%= link_to "Настройки", questions_path %>
 
-	<% if session[:user_id] != nil %>	
+	<% if session[:user_id] != nil %>
+		<%= link_to "Викторина", quiz_ask_path %>
+		<%= link_to "Настройки", questions_path %>
+
 		<%= User.find(session[:user_id]).login %>
 		<%= link_to "Выход", quiz_signout_path %>
+	<% else %>
+		<%= link_to "Вход", quiz_signin_form_path %>
+		<%= link_to "Регистрация", quiz_signup_form_path %>
 	<% end %>
 </nav>
 

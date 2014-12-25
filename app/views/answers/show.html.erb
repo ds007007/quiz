@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Ответ:</strong>
   <%= @answer.content %>
   <br>
-  <strong>Question:</strong>
+  <strong>Вопрос:</strong>
   <%= @answer.question.content %>
   <br>
-  <strong>Is correct:</strong>
+  <strong>Правильный:</strong>
   <%= @answer.is_correct %>
   <br>
 </p>
 
-<%= link_to 'Edit', edit_answer_path(@answer) %> |
-<%= link_to 'Back', answers_path %>
+<%= link_to 'Ред.', edit_answer_path(@answer) %> |
+<%= link_to 'Назад', answers_path %>

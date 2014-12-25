@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %><br>
+    <%= f.label "Ответ:" %><br>
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :question_id, "Question" %><br>
+    <%= f.label :question_id, "Вопрос" %><br>
     <%= f.collection_select :question_id, Question.all, :id, :content %>
   </div>
   <div class="field">
-    <%= f.label :is_correct %><br>
+    <%= f.label "Правильный" %>
     <%= f.check_box :is_correct %>
   </div>
   <div class="actions">
