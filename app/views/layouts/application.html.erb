@@ -11,6 +11,7 @@
 <nav>
 	<div>
 		<%= link_to "Главная", root_path %>
+		<%= link_to "Статистика", quiz_stat_path %>
 
 		<% if session[:user_id] != nil %>
 			<%= link_to "Викторина", quiz_ask_path %>

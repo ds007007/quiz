@@ -9,7 +9,7 @@
 				<ol>
 					<% q.answers.each do |a| %>
 						<li>
-							<%= radio_button_tag "questions["+q.id.to_s+"]", a.id %><!--1 param - name, 2 param - value-->
+							<%= radio_button_tag "questions["+q.id.to_s+"]", a.id  %><!--1 param - name, 2 param - value-->
 							<%= a.content %>
 						</li>
 					<% end %>

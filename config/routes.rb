@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'user/signuped'
-
-  get 'quiz/signin_form'
-
-  post 'quiz/signin'
-
-  get 'quiz/signout'
+  get 'quiz/stat'
 
   root 'quiz#welcome' # либо get 'quiz/welcome' (контроллер/действие)
 

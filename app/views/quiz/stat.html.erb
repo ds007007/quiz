@@ -1,0 +1,22 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Пользователь</th>
+      <th>Результат, %</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |res| %>
+      <tr>
+        <td><%= res.user.login %></td>
+        <td><%= res.result %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

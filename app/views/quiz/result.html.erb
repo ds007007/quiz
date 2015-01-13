@@ -1,2 +1,2 @@
 <h1>Результат</h1>
-<%= @r.to_s + " правильных ответов из " + @count.to_s + " (" + number_with_precision(@r.to_f() /@count, precision: 2).to_s + "%)" %>
+<%= @r.to_s + " правильных ответов из " + @count.to_s + " (" + (@r*100/@count).to_s + "%)" %>
