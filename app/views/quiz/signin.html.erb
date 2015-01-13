@@ -1,6 +1,0 @@
-<% if session[:user_id] == nil %>
-	<h2>Неверная пара логин-пароль!</h2>
-	<%= link_to "Повторить", quiz_signin_form_path %>
-<% else %>
-	<h2>Вы успешно вошли в систему!</h2>
-<% end %>

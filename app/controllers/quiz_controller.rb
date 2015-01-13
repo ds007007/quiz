@@ -1,38 +1,25 @@
 class QuizController < ApplicationController
+  include Extensions
+  
+  before_action :check_session, only: [:ask, :result]
+
   def welcome
   end
 
   def ask
-  	#take random question
-  	question_ids = Question.ids
-  	r = Random.rand(question_ids.count)
-  	@question = Question.find(question_ids[r])
-
+  	#take all questions
+  	@questions = Question.all
   end
 
   def result
-  	@answer = Answer.find(params[:answer_id])
-  end
-
-  def signup
-    @user = User.find_by(login: params["login"])
-    if  @user == nil
-      new_user = User.create(login: params["login"], password: params["password"])
-      session[:user_id] = new_user.id
+    @count = params[:questions].count
+    @r = 0
+    params[:questions].each do |question_id, answer_id|
+      a = Question.find(question_id).answers.find(answer_id)
+      if a.is_correct
+        @r = @r + 1
+      end
     end
   end
 
-  def signin
-    user = User.find_by(login: params["login"], password: params["password"])
-    if user != nil
-      session[:user_id] = user.id
-    else
-      session[:user_id] = nil
-    end
-  end
-
-  def signout
-    session[:user_id] = nil
-    redirect_to root_path
-  end
 end

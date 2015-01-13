@@ -1,17 +1,25 @@
 <h1>Здесь будет вопрос</h1>
-<% if @question.present? %>
-	<%= @question.content %>
-	<%= form_tag(quiz_result_path, method: :get) do %>
-		<ol>
-			<% @question.answers.each do |a| %>
-			<li>
-				<%= radio_button_tag "answer_id", a.id %><!--1 param - name, 2 param - value-->
-				<%= a.content %>
-			</li>
+<%= form_tag(quiz_result_path, method: :get) do %>
+	
+	<% if @questions.present? && @questions.count != 0 %>
+		<% @questions.each do |q| %>
+			<% if q.present? && q.answers.present? %>
+				<%= q.content %>
+				
+				<ol>
+					<% q.answers.each do |a| %>
+						<li>
+							<%= radio_button_tag "questions["+q.id.to_s+"]", a.id %><!--1 param - name, 2 param - value-->
+							<%= a.content %>
+						</li>
+					<% end %>
+				</ol>
 			<% end %>
-		</ol>
+		<% end %>
+
 		<%= submit_tag "Проверить" %>
+	<% else %>
+		<%= Вопросов нет %>
 	<% end %>
-<% else %>
-	<%= "Вопросов нет" %>
+
 <% end %>

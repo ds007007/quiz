@@ -17,9 +17,9 @@
 			<%= link_to "Настройки", questions_path %>
 
 			<%= User.find(session[:user_id]).login %>
-			<%= link_to "Выход", quiz_signout_path %>
+			<%= link_to "Выход", session_path(session[:user_id]), method: :delete %>
 		<% else %>
-			<%= link_to "Вход", quiz_signin_form_path %>
+			<%= link_to "Вход", new_session_path %>
 			<%= link_to "Регистрация", new_user_path %>
 		<% end %>
 	</div>

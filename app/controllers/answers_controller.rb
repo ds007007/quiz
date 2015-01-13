@@ -1,4 +1,7 @@
 class AnswersController < ApplicationController
+  include Extensions
+  
+  before_action :check_session
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers
