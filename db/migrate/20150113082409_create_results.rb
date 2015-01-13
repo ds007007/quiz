@@ -1,5 +1,10 @@
 class CreateResults < ActiveRecord::Migration
   def change
-  	add_column :results, :result, :integer
+    create_table :results do |t|
+      t.integer :user_id
+      t.integer :result
+
+      t.timestamps
+    end
   end
 end

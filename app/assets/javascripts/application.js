@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(
+	function(){
+		console.log("Hello");
+		$("#ask_form").on("ajax:success", function(e, data, status, xhr){
+			alert(data['right'] + " правильных ответов из " + data['count'] + " (" + 
+				(data['right'] * 100 / data['count']).toFixed(0) + "%)")
+		});
+	}
+);

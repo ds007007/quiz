@@ -1,5 +1,5 @@
 <h1>Здесь будет вопрос</h1>
-<%= form_tag(quiz_result_path, method: :get) do %>
+<%= form_tag(quiz_result_path, method: :get, remote: true, id: 'ask_form') do %>
 	
 	<% if @questions.present? && @questions.count != 0 %>
 		<% @questions.each do |q| %>

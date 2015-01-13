@@ -22,6 +22,12 @@ class QuizController < ApplicationController
       end
     end
 
+    res_json = {
+      'right' => @r,
+      'count' => @count
+    }
+    render json: res_json.to_json #после этого контроллер продолжает выполняться
+
     #записываем результат
     res = Result.find_by(user_id: session[:user_id])
     if res
